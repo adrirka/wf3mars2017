@@ -13,6 +13,49 @@
         <!-- Ajouter un titre à la page -->
         <title>Bonjour le monde</title>
 
+        <style>
+            ol{
+                background-color: blue
+             }
+
+            ul{
+                background-color: red;
+                list-style-type: none;     <!-- Faire en sorte d'afficher les accents -->
+                }
+
+            table {
+                border-collapse: collapse; 
+                text-align: center; 
+                width: 100%  
+            }
+
+            td {
+                border: 1px dashed black; 
+                width: 100px; 
+                height:100px
+            }
+
+            form {
+                text-align: center; 
+                margin: 16px;
+            }
+
+            fieldset{
+                background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg); 
+                background-size: 100% 100%
+            }
+
+            /*class*/
+            .mike { 
+                color : blue
+            }
+
+            /*id*/
+            #webforce3 {
+                color: red
+            }
+        </style>
+    
     </head>
 
     <!-- Ajouter du contenu dans la page -->
@@ -33,7 +76,7 @@
 
         <!-- Les titres -->
 
-            <h1>Titre principal</h1>
+            <h1 id="webforce3">Titre principal</h1>
             <h2>Sous titre jusqu'à h6</h2>
 
         <!-- Un lien dans un nouvel onglet -->
@@ -46,11 +89,11 @@
             
         <!-- Paragraphe -->
         
-            <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit.</b> Facere temporibus architecto aut, consequuntur harum dicta sit. Nulla dolorum ullam numquam ipsam iure, labore assumenda est temporibus maiores. Qui nobis, ad!</p>
+            <p class="mike">Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit.</b> Facere temporibus architecto aut, consequuntur harum dicta sit. Nulla dolorum ullam numquam ipsam iure, labore assumenda est temporibus maiores. Qui nobis, ad!</p>
 
         <!-- Liste ordonnée -->
    
-        <ol style="background-color: blue">
+        <ol>
             <li>Pierre</li> <!-- List item -->
             <li>Paul</li>
             <li><i>Jacques</i></li>
@@ -58,7 +101,7 @@
 
         <!-- Liste non ordonnée -->
 
-        <ul style="background-color: red">
+        <ul>
             <li>John</li>
             <li><b>Paul</b></li>
             <li>Georges</li>
@@ -69,12 +112,34 @@
         <img src="IMG/minion.jpg" alt="Photo d'un minion'">
         <img src="IMG/minion.jpg" alt="Photo d'un minion'">
 
-    </body>
+        
+        <!-- Tableau -->
+        
+        <table>
+            <tbody>
+            <tr> <!-- pour définir une ligne --> 
+                <td></td>  <!-- pour définir une colonne dans la ligne -->
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Mike</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>   
 
+        
         <!-- Formulaire -->
 
-        <form  style="text-align: center; margin: 16px" action="about.html" method="POST">  
-        <fieldset style="background-image: url(http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg); background-size: 100% 100%">
+        <form  action="about.html" method="POST">  
+        <fieldset>
             <legend>Mike</legend>
             <p>Prénom:</p>
             <input type="text" name="firstname" value="">
@@ -83,7 +148,15 @@
             <input type="submit" value="Envoi">
         </fieldset>
         </form>
+
         
+</body>
+</html>
+
+      </table>
+
+
+    </body>
 
 </html> <!-- Fermer la balise page --> 
     
