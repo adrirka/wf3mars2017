@@ -3,15 +3,13 @@
 
     <head>
         <meta charset="utf-8">
-        <title>EXO 8 mars</title>
+        <title>EXO 2 intégrer un fichier CSS - 8 mars</title>
+    
+        <!-- Intéfrer la feuille de style CSS --> 
+        <link rel="stylesheet" href="css/style.css"> 
+
     </head>
 
-    <!-- Ajouter du style dans la balise head (2nd méthode)-->
-        <style>
-            h2{
-                color:red;
-            }
-        </style>
     <!-- Ajouter du contenu dans la page -->   
     
     <body>
@@ -20,18 +18,17 @@
 
         <header>    
 
-            <h1>Adrien Rousselet étudiant FrontEnd</h1>
+            <h1>Adrien Rousselet - Etudiant FrontEnd</h1>
 
          <!-- Navigation principale -->
 
          <nav>
             <ul>
-                <!-- Ajouter du CSS en ligne(1ere méthode) -->
-                <li><a href="#" style="color: red">Accueil</a></li>
-                <li><a href="#" style="color: red">A propos</a></li>
-                <li><a href="#" style="color: red">Portfolio</a></li>
-                <li><a href="#" style="color: red">Contact</a></li>
-                <li><a href="#" style="color: red">Profil GitHub</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Profil GitHub</a></li>
             </ul>
          </nav>
 
@@ -43,9 +40,9 @@
 
             <!-- créér une zone -->
 
-            <section>
+            <section class="redBackground">
 
-                <h2>A propos d'Adrien Rousselet</h2>
+                <h2 id="bigTitle">A propos d'<b>Adrien</b></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odio hic qui ab accusantium, ad quae, amet eveniet officia facilis iste voluptatum officiis ex natus cumque earum! Quis, repellat, praesentium.</p>
             
             </section>
@@ -55,7 +52,7 @@
 
             <section>
 
-                <h2>Portfolio d'Adrien Rousselet</h2>
+                <h2 id="portfolioTitle">Portfolio d'<b>Adrien</b></h2>
                 <p>Cliquez sur un des projets ci-dessous</p>
 
                  <!-- créér 3 sous-sections dans la section -->
@@ -81,7 +78,7 @@
 
         <section>
 
-            <h2>Contacter Adrien Rousselet</h2>
+            <h2>Contacter <b>Adrien Rousselet</b></h2>
             <p>Vous pouvez envoyer un email en cliquant sur cette adresse :</p>
             <a href="#">adrien.rousselet@orange.fr</a></p>
 
@@ -91,7 +88,7 @@
 
     <!-- Fermeture de la page -->
 
-    <footer>    
+    <footer class="redBackground">    
 
             <p>Under MIT Licence</p>
 
