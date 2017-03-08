@@ -21,6 +21,9 @@ Style reset
         }
 
 
+        section{
+            margin-bottom: 4rem; 
+        }
 /*
 em / rem
 */     
@@ -41,7 +44,7 @@ Style header
         header{
 
         /* Ajouter une bordure de 5px rouge */
-        border: .5rem solid red;
+        border: .5rem solid red;   /* propriétés border : width, style and color */
 
         /* Ajouter une marge à l'intérieur de la bordure */
         padding: 2rem; 
@@ -54,7 +57,7 @@ Style header
         /* Modifier le type des balises li (block par défaut to inline permettant un alignement) */
         
         li{
-        display: inline;
+        display: inline-block;
         }
             
 
@@ -68,8 +71,70 @@ Style largeur site
         
         /* Centrer une balise de type block réduite en largeur */
             margin: 2rem auto; 
-        }           
+        } 
+
+
+/* 
+Mise en forme topographique 
+*/
+
+        .présentation{
+
+            /* Modifier la police de la font */
+            font-family: "Arial", Helvetica, sans-serif  /* la police principale est notifiée entre guillemet */
+
+            /* Modifier la taille de la font */
+            font-size: 1.7rem;
+
+            /* Modifier l'interlignage */
+            line-height: 2em;
+
+            /* Modifier la graisse (épaisseur) */
+            font-weight: bold;
+
+            /* Ajouter une ombre portée à la font */
+            text-shadow: 0 0 .5rem blue;    /* abscisse x  ordonnée y diffusion color */
+            
+            /* Modifier la casse */
+            text-transform: uppercase;
+
+            /* Modifier le style de la font (italic) */
+            font-style: italic;
+
+            /* Modifier la décoration de la font */
+            text-decoration: underline;
+
+            /* Modifier la couleur de la font */
+            color: white;
+
+            padding: 2rem;
+            background-color: red;
+            margin: 4rem auto;
+
+        }
+
+/* 
+Utlisation des couleurs 
+*/
        
+       #portfolioAdrien{
+        background-color: #1c756d;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+
+       }
+
+       #portfolioAdrien article {
+        background-color: rgba(255, 255, 255, .5); /* code couleur en rgba avec RGB + opacité) */
+        color: #000;   /* code couleur en hexé */
+        padding: 2rem;
+        margin: 1rem;
+        
+        /* Faire en sorte d'afficher les articles sur 3 colonnes */
+        display: inline-block;  
+
+       }
 
         
 
