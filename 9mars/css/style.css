@@ -1,0 +1,72 @@
+/*
+Style Reset - cfg de base css
+*/
+    /* Supprimer toutes les marges */
+    /* Le selecteur * s'applique à toutes les balises de la page */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Faire en sorte que 1rem soit égal à 10px */
+    html{
+        font-size: 62,5%;
+    }
+
+    /* conserver la taille de base à 15px */
+    body{
+        font-size: 1,5rem; 
+    }
+
+    /* Supprimer la décoration des balises A */
+    a{
+        text-decoration: none;
+    }
+
+    /* Faire en sorte que les images ne dépassent pas leur parent */
+    img{
+        max-width: 100%;
+    }
+
+/*
+Style Header
+*/
+    header{
+       
+        /* Aligner le texte au centre */
+        text-align: center;
+        
+        /* Modifier la couleur de la fonte */
+        color:white;
+        
+        /* Ajouter une couleur de fond */
+        background: #18BC9C;
+    }
+
+    nav{
+        /* Mettre le texte en majuscule */
+        text-transform: uppercase;
+
+        background: #2C3E50;
+
+        /* Aligner le texte à gauche */
+        text-align: left;
+    }
+
+    nav a {
+        /* Modifier la couleur du texte */
+        color: white;
+    
+        /* Passer le texte en gras */
+        font-weight: bold;
+    }
+    
+    li{
+        /* Aligner les balises LI */
+        display: inline-block;
+
+        /* Ajouter une marge extérieur à droite */
+        margin-right: 1rem;
+    }
+    
+
