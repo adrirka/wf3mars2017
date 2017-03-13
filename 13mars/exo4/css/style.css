@@ -1,0 +1,13 @@
+section{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+font-size: 25rem;
+text-align: center;
+background: -moz-radial-gradient(center, ellipse cover, #d5cea6 33%, #b7ad70 63%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #d5cea6 33%,#b7ad70 63%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #d5cea6 33%,#b7ad70 63%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5cea6', endColorstr='#b7ad70',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
