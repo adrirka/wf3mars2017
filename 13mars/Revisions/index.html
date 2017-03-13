@@ -1,0 +1,74 @@
+<!-- 
+
+-Créer un document de base HTML5 
+-Créer une ouverture de la page
+    -Un titre principal
+    -Une navigation principale avec 4liens
+        -Home
+        -About
+        -Contacs
+        -Facebook
+-Créer une zone de contenu principal
+    -Une section
+        -Un Sous-titre 'about'
+        -Une image
+        1 paragraphe
+    -Une section
+        -Sous titre 'contacts'
+        -Formulaire nom/email/message
+-Créer une fermeture de la page 
+    -Under MIT Licence
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+    <header>
+        <h1>Revisions - 13mars</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#" target="_blank">Facebook</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>About</h2>
+            <img src="img/image.jpg" alt="about">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente incidunt quasi necessitatibus aperiam minus culpa provident sunt repellendus, totam nostrum ea voluptatibus dolorem quae pariatur aut delectus voluptate minima.</p>
+        </section>
+        <section>
+            <form action="#">
+                <!-- Pour associer un label à un input il faut utiliser l'id de l'input dans l'attribut for du label -->
+                <label for="userName">Nom:</label>
+                <input type="text" id="userName" placeholder="Min. 5 caractères">
+
+                <label for="userEmail">Email:</label>
+                <input type="text" id="userEmail" placeholder="Adresse Email valide">
+
+                <label for="userEmail">Message</label>
+                <textarea name="userMessage" placeholder="Min. 5 caractères"></textarea>
+
+               <!-- Pour valider un formulaire il faut ajouter à la fin un input de type submit -->
+                
+                <input type="submit" value="Envoyer votre message">
+                
+            </form>
+        </section>
+    </main>
+</body>
+    <footer>Under MIT Licence</footer>
+</html>

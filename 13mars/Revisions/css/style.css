@@ -1,0 +1,90 @@
+/* 
+Style Reset 
+*/
+
+/* Supprimer toutes les marges */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Configurer la valeur 1 rem = 10px */
+    /* Ne jamais définir les propriétés width et heigt sur le html*/
+    html{
+        font-size: 62,5%;
+    }
+
+    body{
+        /* Ne jamais définir les propriétés width et heigt sur le body*/
+        font-size: 1,5rem; /* 1,5rem = 15px, taille de base d'une page */
+        text-align: center;
+    }
+
+    header, main, footer{
+        max-width: 50rem;
+
+        /* Center la balise dans la page HTML */
+        margin: 2rem auto;
+        padding: 2rem;
+
+    }
+
+/* 
+Style Header 
+*/
+
+    header{
+    background: #eee;
+
+    /* Centrer la balise dans la page html */
+    margin: 2rem auto;  /* 20px haut-bas auto gauche droite / margin auto attribut autant de marges à gauche que à droite donc centre l'enfant dans son parent */
+    
+    /* Bloquer les enfants dans leur parents */
+
+    position: relative;
+    
+    }
+
+
+    /* Sélectionner la première li du header */
+    
+    header li:first-child{
+    /* Sortir la balise du flux pour la repositionner à droite */
+    position: absolute;
+    right: 2rem;
+
+    }
+    
+    header li:last-child{
+    position: absolute;
+    left: 2rem;
+    }
+    
+    /* Aligner les balises li de la page */
+    nav li{
+    display: inline-block;
+    }
+
+
+/* 
+Style Main 
+*/
+
+    label, textarea, input:not( [type="submit"] ){
+        display: block;
+        width: 100%;
+        /* Exclure de la sélection les inputs de type submit */
+    }
+
+/* 
+Style Footer
+*/
+
+    /* faire en sorte que le footer soit toujours collé en bas de la page */
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%; 
+        max-width: 100%;
+    }
