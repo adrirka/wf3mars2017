@@ -1,0 +1,113 @@
+/* Importer la police dès la première ligne pour le load */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+/*
+Style Reset
+*/
+
+    /* Supprimer les marges */
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Configuration l'utilisation de 1 rem = 10px */
+    /* Attention de bien utiliser un point et non une virgule pour les décimales */
+
+    html{
+        font-size: 62.5%
+    }
+
+    body{
+        font-size: 1.5rem;
+        /* Appliquer la police au body*/
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 400;
+    }
+
+    a{
+        text-decoration: none; 
+        color: #349aa6;  
+    }
+
+    h1 span{
+    text-transform: lowercase;
+
+    }
+ 
+    /* Appliquer deux designs différents sur la balise h1 */
+    h1{
+        font-size: 1.5rem;
+        line-height: 1.8em;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+        
+    }
+
+    h1 b{
+        font-size: 2em;
+        display: block;
+    }
+
+
+/*
+Style Header
+*/
+
+    header{
+        text-align: center;
+        color: white;
+
+        /* Configurer l'image de fond en parallaxe */
+        background-image: url(../img/img-couverture-iphone.jpg);
+
+        /* Positionner l'image de fond */
+        background-position: top;
+        
+        /* Modifier la taille de l'image de fond */
+        background-size: 150%;
+
+        /* Bloquer l'image de fond */
+        background-attachment: fixed;
+    }
+
+    nav{
+        background: #002a35;
+        padding: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    li{
+        display: inline-block;
+        width: 45%;
+    }
+
+    /* Selectionner une balise grâce à son attribut */
+
+    [src="img/logo-GRT-gaz-blanc.png"]{
+        width: 15rem;
+        margin-bottom: 4rem;
+    } 
+
+    /* Sélectionner la balise suivante, la balise <a> qui suit le h1 */
+
+    h1 + a{
+        background: #349aa6;
+        
+        /* Les balises de type inline ne peuvent pas recevoir les propriétés width et height */
+        display: inline-block; 
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 8rem;
+       
+        /* Créer un rond avec une bordure carrée */
+        border-radius: 50%;
+    }
+
+    a img{
+        padding-top: .8rem;
+    }
+    
+
