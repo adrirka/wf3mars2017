@@ -93,7 +93,7 @@ Mise en forme topographique
             font-weight: bold;
 
             /* Ajouter une ombre portée à la font */
-            text-shadow: 0 0 .5rem blue;    /* abscisse x  ordonnée y diffusion color */
+            text-shadow: .1rem .1rem .5rem blue;    /* abscisse x  ordonnée y diffusion color */
             
             /* Modifier la casse */
             text-transform: uppercase;
