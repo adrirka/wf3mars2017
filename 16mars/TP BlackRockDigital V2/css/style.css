@@ -64,6 +64,7 @@ Style Reset
     img{
         max-width: 100%;
     }
+    
 
     header > a, main a{
         font-size: 1.2rem;
@@ -126,7 +127,7 @@ Style Header
     }
     
     .callToAction{
-        border: .1rem solid #F05F40d;
+        border: .1rem solid #F05F40;
         background:#F05F40;
         color:white;
         padding: 1.5rem 2.5rem;
@@ -138,6 +139,8 @@ Style Header
 Style Main
 */
 
+    /* What you need */
+    
     main section:first-child{
         background:#F05F40;
         color: white;
@@ -167,6 +170,8 @@ Style Main
         margin: 2rem auto;
     }
 
+    /* Service */
+
     main section:nth-child(2){
         background: white;
         color:#222;
@@ -183,16 +188,21 @@ Style Main
         color: #777;
     }
 
-    .fa-diamond, .fa-paper-plane, .fa-newspaper-o, .fa-heart {
+    /* .fa-diamond, .fa-paper-plane, .fa-newspaper-o, .fa-heart */
+    section:nth-child(2) .fa {
         content: "\f219";
         font-size: 7rem;
         color: #F05F40;
     }
 
+    
+    /* Portfolio */
+    
     figure{
         position: relative;
-        display: inline-block;
+        float:left;
         width: 100%;
+        line-height: 0;
     }
     
     figcaption{
@@ -202,9 +212,27 @@ Style Main
         width: 100%;
         height: 100%;
         background: rgba(240, 95, 64, .7);
-        line-height: 1;
         opacity: 0;
     }
     
+    
+    /* Ecran d'une taille minimale de 650px */
+    @media screen and (min-width: 650px) {
 
+        /* Style Portfolio */
+        figure{
+                width: 50%;
+            }
+    }
+    
+    /* Ecran d'une taille minimale de 850px */
+    @media screen and (min-width: 850px){
+
+
+        /* Style Portfolio */
+        figure {
+                width: 33.3333%;
+            }
+
+    }
     
