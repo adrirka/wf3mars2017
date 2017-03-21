@@ -59,8 +59,8 @@ section:nth-child(2){
     background: blue;
 
     /* Gérer le sens de l'animation */
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+    -webkit-animation-direction: alternate-reverse;
+    animation-direction: alternate-reverse;
 
 }
 

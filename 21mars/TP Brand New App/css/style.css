@@ -1,0 +1,381 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700|Suez+One');
+
+/* 
+Style Reset 
+*/
+
+    *{
+        
+        /* Supprimer toutes les marges */
+
+        margin: 0;
+        padding: 0;
+        
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        
+    }
+
+    
+    /* Configurer l'utilisation de 1rem=10px */
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{ 
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Merriweather', sans-serif;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: 'Suez One', serif;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family: 'Merriweather', sans-serif;
+        font-size: .5em; /* => la moitié de h1 */
+        display: block;
+    }
+
+    h2{
+        font-family: 'Suez One', serif;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    a{ 
+        text-decoration: none;
+    }
+
+    a, header li{
+       text-decoration: none;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+
+    }
+
+    /* Supprimer le style des listes */
+    ul{
+        list-style: none;
+    }
+
+    /* Faire en sorte que les images ne dépassent pas leur parent */
+    img{
+        max-width: 100%;
+    }
+
+/* 
+Style Header
+*/
+
+    header{
+        color: white;
+        background-color: #22175b;
+        padding: 2rem;
+
+        /* Bloquer les enfants dans leur parent */
+        position: relative;
+    }
+
+    nav{
+        display: none;
+    }
+
+    nav:hover{
+         display:block;
+     }
+     
+
+    header > a{
+
+        /* La balise A qui est enfant direct du header - les autres sélecteurs fonctionnels auraient pu être: 
+        h1 + a
+        */
+        font-size: 1.9rem;
+
+        background: white;
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;    /* en appliquant une valeur hybride inline-block je conserve la propriété "text-align" ainsi que les propriétés width et height qui n'auraient pas fonctionnées autrement */
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        
+        padding-top: 0.7rem;
+
+        /* Positionner précisement la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    
+        border: .2rem solid #22175b;
+    }
+
+     header > a:hover{
+         color: white;
+         background: #22175b;
+         border-color: white;
+     }
+
+    /* Afficher la nav au survol de la balise A du header */
+    header > a:hover + nav{
+        display: block;
+    }
+
+
+    header li{
+        background: rgba(255, 255, 255, .5);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    header li:hover{
+        background: white;
+    }
+
+    header li:hover a{
+        color: #22175b;
+    }
+    
+    nav a {
+        color: white;
+    }
+
+/*
+Style main
+*/
+
+    main {
+        padding: 4rem 2rem 10rem 2rem;    
+    }
+
+    /* Style portfolio */
+    figure{
+        position: relative;
+       
+    }
+
+    figure:after{
+        content:"";
+        width: 100%;
+        height: 3rem;
+        position: absolute; 
+        bottom: 0;
+        left: 0;
+        background: white;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 70%;
+        font-weight: 700;
+        background: white;
+        padding: 1rem;
+        z-index: 1;
+
+       -webkit-transform: translateX(-50%);
+       transform: translateX(-50%);
+    }
+
+    figcaption span{
+        font-weight: 400;
+        display: block;
+    }
+
+    
+    .portfolioPage article{
+        position: relative;
+        margin: 2 rem auto;
+
+        /* Masquer les éléments qui dépassent de la balise */
+        overflow: hidden;
+    }
+
+
+    .portfolioPage main a{
+        color: white;
+        background: #22175b;
+        padding: .5rem 1rem;
+        position: absolute;
+        top: -10%;
+        left: 50%;
+        z-index: 1;
+
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+
+    /* Changer la propriété top dela balise A au survol de l'article */
+    .portfolioPage article:hover a{
+        top: 40%;
+    }
+
+
+/*
+Style contact
+*/
+
+    form{
+        margin: 2rem auto;
+    }
+
+    textarea, input:not([type="submit"]){
+        display: block;
+        width: 100%;
+
+        margin-bottom: 2rem;
+        padding: 1rem;
+
+        /* Enlever la bordure */
+        border: none;
+
+        /* Redéfinir la bordure */
+        border-bottom: .1rem dotted #22175b;
+    }
+
+    textarea{
+        /* Définir une hauteur minimum */
+        min-height: 15rem;
+    }
+
+    form :last-child{
+        color: white;
+        background: #22175b;
+        border: none;
+        padding: .5rem 1rem;
+    }
+
+    iframe{
+        width: 100%;
+        min-height: 20rem;
+        border: none;
+    }
+
+
+
+
+/* 
+Style footer
+*/
+
+    footer{
+        color: white;
+        position: fixed;
+        bottom: 0; 
+        left: 0;
+        width: 100%;
+        background: #22175b;
+        padding: 2rem;
+    }
+
+    footer a{
+        color: white;
+    }
+
+    /* Toutes les balises du li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+
+/*
+Requêtes média
+*/
+
+    /* Style Reset */
+    main, h1, nav{
+        
+        /* Réduire en largeur la taille de mon site ATTENTION A NE PAS APPLIQUER DE PROPRIETES WIDTH ET HEIGHT SUR LE BODY */
+        max-width: 85rem;
+        
+        /* Centrer les éléments dont le parent est réduit en largeur */
+        margin: auto;
+    }
+
+    h1 span{
+        display: initial;
+    }
+
+    h1{
+        font-size: 4rem;
+        text-indent: 1rem;
+    }
+    
+    /* Ecran d'une taille minimale de 400px */
+    @media screen and (min-width: 400px){
+        
+        /* Style portfolio*/
+        .portfolioPage article{
+
+            /* Passer en 2 colonnes */
+            display: inline-block;
+            width: 49%;
+        
+            /* Gérer les paddings */
+            padding: 0 1rem 0 0;
+        
+        }
+
+        /* Sélectionner toutes les deux balises à partir de la 2eme */
+        .portfolioPage article:nth-child( 2n + 2 ){
+            padding: 0 0 0 1rem;
+        }
+    }
+
+    /* Ecran d'une taille minimale de 750px */
+    @media screen and (min-width: 750px){
+        
+        /* Style header */
+
+            header{
+                text-align: left;
+                text-indent: 1rem;
+            }
+
+            /* Masquer le burger menu */
+            header > a{
+                display: none;
+            }
+            
+            /* Afficher la nav */
+            nav {
+                display: block;
+                
+            }
+
+            /* Aligner les items de la nav */
+            nav li {
+                display: inline-block;
+                text-indent: 0;
+            }
+
+    }
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
