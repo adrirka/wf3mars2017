@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700|Roboto:400,700');
+
+/* 
+Style Reset
+*/
+
+    
+    *{
+        /* Suppression des marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégration du padding et du border */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    
+    /* Configuration des tailles dynamiques rem  */
+    
+    html{
+        font-size: 62.5%;
+    }
+
+    /* Ramener la valeur 1 rem= 10 px */
+    body{ 
+        font-size: 1.5rem;
+    }
+
+
+    h1, h2, nav li span, footer li span{
+        font-family: 'Roboto' sans-serif;
+        font-weight: 700;
+    }
+    
+    
+    h2{
+        background: #0b0b2d;
+        color: white;
+        padding: .5rem .5rem;
+        display: inline-block;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }  
+
+    p{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+    
+    img{
+        max-width: 100%;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    main, header section{
+        max-width: 85rem;
+        margin: auto;
+    }
+
+
+/*
+Style Header
+*/
+
+    
+    nav{
+        background-image: url(../source/img/back.jpg);
+        background-size: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        padding: 2.5rem;
+        position: relative; 
+        text-align: right; 
+        word-spacing: 1rem;   
+    }
+
+    nav li{
+        display: inline-block;  
+        
+    }
+
+    nav li a{
+        color: white;
+        
+    }
+
+    nav li span{
+        color: white;
+        font-size: 2rem;
+        letter-spacing: .1em;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+
+    header img{
+        float: left;
+        border-radius: 50%;
+        width: 20%;
+        max-width: 20;
+        padding: 1rem;
+    }
+
+    h1{
+        color: #0b0b2d;
+        padding: 2rem;
+    }
+
+
+/*
+Style Main
+*/
+
+    main section{
+        clear: both;
+        padding: 2rem;
+        margin: 2rem auto;       
+    }
+
+    /* Section About */
+
+    .about p{
+        column-count: 2;
+        vertical-align: top;
+    }
+
+
+    /* Section portfolio  */
+
+    
+    main article{
+        position : relative;
+        display: inline-block;
+        width: 24%;
+    }
+
+
+    figcaption{
+        position: absolute;
+        top: 95%;
+        left: 49%;
+        
+        -webkit-transform: translate(-49%, -80%);
+        transform: translate(-49%, -80%);
+        
+        width: 100%;
+        color: black;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        background: rgba(255, 193, 193, 1);
+        opacity: 0.8;
+        padding: .7rem;
+    }
+
+    section article :first-child :not(figcaption){
+    /* Centrer dans la largeur tous les éléments in-line */
+        text-align: center;
+    }
+
+    /* Forumlaire */
+
+    form{
+        margin: 2rem auto;
+        position: relative;
+        display: inline;
+        width: 100%;
+    }
+
+    textarea, input:not([type="submit"]){
+        display: inline-block;
+        width: 50%;
+
+        margin-bottom: 2rem;
+        padding: 1rem;
+
+       
+        border: .1rem solid;  
+        background: rgba(119, 136, 153, .1);
+        
+    }
+
+    input([type="placeholder"]){
+        color: black;
+    }
+
+    textarea{
+        /* Définir une hauteur minimum */
+        min-height: 10rem;
+    }
+
+    form :last-child{
+        display: inline-block;
+        position: absolute;
+        color: white;
+        background: #22175b;
+        border: none;
+        padding: .5rem 1rem;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 893%);
+    }
+
+    iframe{
+        display: inline-block;
+        width: 50%;
+        min-height: 20rem;
+        border: none;
+    }
+
+
+
+/*
+Style footer 
+*/
+
+   footer{
+        background: darkblue;
+        padding: 2.5rem;
+        position: relative; 
+        text-align: left; 
+        word-spacing: 1rem;   
+    }
+
+    footer li{
+        display: inline-block;  
+        
+    }
+
+    footer li a{
+        color: white;
+        
+    }
+
+    footer li span{
+        color: white;
+        font-size: 2rem;
+        letter-spacing: .1em;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+
+
+
+  
+
+    
+
