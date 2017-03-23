@@ -1,0 +1,29 @@
+/* LES PROPRIETES CSS EN AVAL ANNULENT CELLES EN AMONT */
+
+
+
+/* Toutes les balises p de la section (enfants et sous enfants) */
+section p{
+    color: red
+}
+
+/* Les balises P qui sont enfant direct de section */ 
+section > p{
+    color: blue;
+}
+
+
+/* Toutyes les balise P qui suivent la section */
+section ~ p{
+    color: yellow;
+}
+
+/* La balise P qui suit directement la balise section */
+section + p{
+    color: purple;
+}
+
+/* Premier enfant et sous enfant p de ma section */
+section p:first-child{
+    color:green;
+}
