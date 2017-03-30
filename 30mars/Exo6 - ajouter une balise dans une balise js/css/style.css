@@ -1,0 +1,12 @@
+nav{
+    padding: 2rem;
+}
+
+a{
+    text-decoration: none;
+    margin: 1rem;
+}
+
+li{
+    display: inline-block;
+}
