@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri|Gentium+Book+Basic:700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+        
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-family: 'Amiri', serif;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h1, h2, h3{
+        font-family: 'Gentium Book Basic', serif;
+        font-weight: 700;
+    }
+
+
+
+/*
+Style Header
+*/
+
+    header, footer{
+        color: white;
+        background-color: rgba(33, 134, 78, 0.5);
+        padding: 2rem;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    .fa-bars{
+        position: absolute;
+        background-color: rgba(33, 134, 78, 0.5);
+        border: .3rem solid white;
+        width: 3.5rem;
+        height: 3.5rem;
+        left: 50%;
+        bottom: 0;
+        padding-top: .5rem;
+        font-size: 1.9rem;
+        
+        -webkit-border-radius: 50%;        
+        border-radius: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, 50%);
+
+    }
+
+    h1 span{
+       font-family: 'Gentium Book Basic', serif;
+       font-weight: 400;
+       font-size: .5em;
+       display: block;
+       margin-bottom: 2rem;
+       
+    }
+
+    nav ul{
+        display: none; /* comme on travaille en 'mobile first' on cache la nav dans un premier temps */
+    }
+
+
+/*
+Style footer
+*/
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+
+/*
+Style main
+*/
+    h2{
+        color: rgba(33, 134, 78, 0.5);
+    }
+
+    h2:after{
+        content:"";
+        display: block;
+        width: 5rem;
+        height: 2rem;
+        margin: 1rem auto 2rem auto;
+        border-bottom: .2rem dotted black;
+    }
+
+
