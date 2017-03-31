@@ -25,12 +25,16 @@ Style Reset
         text-align: center;
     }
 
-    h1, h2, h3{
+    h1, h2, h3, nav a{
         font-family: 'Gentium Book Basic', serif;
         font-weight: 700;
     }
 
-
+    main, h1{
+        max-width: 850px;
+        margin: auto;
+        position: relative;
+    }
 
 /*
 Style Header
@@ -68,13 +72,50 @@ Style Header
        font-weight: 400;
        font-size: .5em;
        display: block;
-       margin-bottom: 2rem;
+       margin-bottom: .8rem;
        
     }
 
     nav ul{
-        display: none; /* comme on travaille en 'mobile first' on cache la nav dans un premier temps */
+        height: 0; 
+        overflow: hidden;
+        
+        -webkit-transition: all .5s;
+        transition: all .5s;
+
+        list-style: none;
+        margin: 1rem auto;
     }
+
+    .toggleBurger{
+        height: 15rem;
+    }
+
+    nav a{
+        color: white;
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    nav li{
+        background: rgba(255, 255, 255, .5);
+        padding: 1rem;
+        margin-bottom: .5rem;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .active{
+        background: white;
+    }
+
+    .active a{
+        color: rgba(33, 134, 78, 0.5);
+    }
+
 
 
 /*
@@ -104,6 +145,47 @@ Style main
         height: 2rem;
         margin: 1rem auto 2rem auto;
         border-bottom: .2rem dotted black;
+    }
+
+
+/*
+Requêtes media
+*/
+
+    @media screen and (min-width: 850px){
+
+        /* Style header */
+
+        header{
+            text-align: left;
+        }
+
+        .fa-bars{
+            display: none;
+        }
+
+        nav ul{
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        nav li{
+            display: inline-block;
+            
+            -webkit-border-radius: 20%;
+            border-radius: 20%;
+        }
+
+        nav li:not(:last-child){
+            margin-right: .5rem;
+        }
+      
+        nav{
+        max-width: 850px;
+        margin: auto;
+        position: relative;
     }
 
 
