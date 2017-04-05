@@ -61,7 +61,6 @@ $( document ).ready( function(){
     
     function submitForm(){
 
-    console.log( submitForm )
 
         // Capter la soumission du formulaire
 
