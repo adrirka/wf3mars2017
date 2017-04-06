@@ -17,6 +17,9 @@ $ ( document ).ready( function(){
         
         // Ouvrir la modal sur les boutons
          $( 'button' ).click( function(){
+            
+            console.log( $( this ).prev().text() );
+
             $( '#modal' ).fadeIn();
          });  
 
