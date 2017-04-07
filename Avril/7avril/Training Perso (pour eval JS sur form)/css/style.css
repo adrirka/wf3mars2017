@@ -1,0 +1,79 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.cs');
+@import url('https://fonts.googleapis.com/css?family=Arsenal|Roboto:900');
+
+/*
+Style Reset
+*/
+
+    *{
+        padding: 0;
+        margin: 0;
+    
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    h1, h2{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+    }
+
+    
+    p, form{
+        font-family: 'Arsenal', sans-serif;
+        font-weight: 400;
+    }
+
+    header, main, footer{
+        max-width: 95rem;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    img{
+        max-width: 100%
+    }
+
+/*
+Style Header
+*/
+
+    h1, p, img{
+        margin-bottom: 4rem;
+
+    }
+
+/*
+Style Main
+*/
+
+    form{
+        margin: 4rem auto 4rem auto;
+    }
+
+    input:not([type="submit"]), textarea, select{
+        display: block;
+        width: 100%;
+        border: 1px dotted grey;
+    }
+
+    [type="submit"]{
+        padding: 1rem;
+        margin: 2rem;
+        background: red;
+        color:white;
+    }
+
+
+
+
+

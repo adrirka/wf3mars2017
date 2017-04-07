@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+{{collection}}
+
+<!-- Faire une boucle sur la collection -->
+
+<ul>
+  <li *ngFor="let name of collection">{{name}}</li>
+</ul>
+
+<!-- Appliquer une condition IF sur l'article -->
+<article *ngIf="error == 'pasCool'" >
+  <p>Je suis un message d'erreur</p>
+</article>
+
+<!-- Appeler une fonction au click sur un bouton -->
+<button (ckick)="openAlert()">Lancer la fonction</button>
+
+<!-- Appeler une fonction avec paramètre -->
+<article *ngFor="let name of collection">
+  <p (click)="sayHelloTo(name)">{{name}}</p> 
+</article>
+
+<input type="text" [(ngModel)]="awesome">
+<p>Bonjour {{awesome}}</p>
