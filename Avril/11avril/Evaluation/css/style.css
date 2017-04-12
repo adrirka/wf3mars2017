@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda:400,700');
+
+/*
+Style Reset
+*/
+    *{
+        padding: 0;
+        margin: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+        background: rgba(128, 128, 128, 0.08);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    h1, h2, nav a{
+        font-family: 'Merienda', cursive;
+        font-weight: 400;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    section:not(:last-child){
+        max-width: 95rem;
+        margin: auto;
+        margin-bottom : 2rem;
+    }
+
+/*
+Style Header
+*/
+
+    header{
+        background-image: url(../img/background.jpg);
+        background-repeat-y: no-repeat;
+        background-repeat-x: initial;
+        height: 28rem;
+        margin-bottom: 2rem;
+    }
+
+    nav{
+        background: #061339;
+        text-align: left;
+        padding: 1.2rem;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    h1{
+        color: white;
+        padding: 4rem;
+        text-shadow: 2px 2px #ff0000;
+    }
+
+/*
+Style Main
+*/ 
+
+    /* section haute */
+
+     section:first-child img{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    h2{
+        font-size: 2rem;
+        color: #2F4073;
+        margin-bottom: 2rem;
+    }
+
+    
+    /* formulaire */
+
+    form{
+        border: .1px solid rgba(128, 128, 128, 0.4);
+        padding: 1rem;
+    }
+    select, textarea, input{
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    textarea{
+        min-height: 20rem;
+    }
+
+    [for="userChoice"], [for="userReason"]{
+        display: inherit;
+        color: black;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 1rem;    }
+
+    [type="submit"]{
+        padding: 1rem;
+        background: rgba(0, 218, 8, 0.68);
+        color: white;
+        border: none;
+
+        -webkit-border-radius: .5rem;
+        border-radius: .5rem;
+    }
+
+    .error{
+        border: .2rem solid red;
+    }
+
+    /* Pour l'animation */
+
+    article:nth-child(3) p{
+        display: none;
+        width: 100%;
+        height: 100%;
+        border: .1px solid rgba(128, 128, 128, 0.4);
+        padding: 1rem;
+        background: rgba(0, 218, 8, 0.68);
+        color: white;
+        text-align: center;
+
+    }
+
+    /* section basse */
+
+    section:last-child{
+        background:rgba(128, 128, 128, 0.19);
+    }
+    
+    p{
+        text-align: left;
+        width:100%; 
+    }
+    
+    p:not(last-of-type){
+        margin-bottom: 2rem;
+    }
+
+    img:last-child{
+        background:#7885A5;
+    }
+
+
+/* Style footer */
+
+    footer{
+        color: white;
+        font-size: 1rem;
+        background: #061339;
+        text-align: right;
+        padding: 1.5rem;
+
+    }
+
+/* Pour les écrans d'une taille minimale de 850px  */
+
+    @media screen and (min-width: 850px){
+        
+        article:first-of-type, article:nth-child(2){
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+
+        img:last-child {
+            display: inline-block;
+            width: 49%;
+            overflow: hidden;
+        }
+  
+         p{
+            margin: auto;
+            width:49%; 
+         }
+    }
+
+
+
+ 
+    

@@ -1,0 +1,306 @@
+/* Importer mes styles externes */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Importer la police de caractère */
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+/*
+Style Reset
+*/
+
+    
+    *{ 
+        /* Supprimer mes marges au niveau du domaine */
+        margin: 0;
+        padding: 0;
+
+        /* Inclure les borders dans le margin et le padding */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: Arial, sans-serif;
+        background-image: url(../brief/img/background.png);
+    }
+
+    h1, h2, h3, li:first-child{
+        font-family: 'Courgette', cursive;
+    }
+
+    h1{ 
+        color: #C55394;
+        text-align: center;
+    }
+
+    h2, h3, i{
+        color: #EB43A3;
+        margin-bottom: 2rem;
+        display: inline-block;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    main{
+        max-width: 95rem;
+        margin: auto;   
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .fa-star-o:before{
+        font-size: 2rem;
+    }
+
+     section:not(:last-child){
+    /* Avec ce sélecteur on applique une marge extérieure enter les sections et on évite ainsi la double marge de 4rem + 4rem en bas */
+        margin-bottom: 4rem;
+    }
+
+    p{
+        text-align: justify;
+        margin-bottom: 2rem;
+    }
+
+    
+/*
+Style Main
+*/
+
+    /* Style Header */
+    
+    header{
+        background: #C55394;
+        text-align: center;
+        height: 5rem; 
+        margin-bottom: 16rem;   
+    }
+
+    a:hover{
+        background: #EB43A3;
+    }
+    
+    li{
+        display: inline-block;
+        padding: 1rem;
+    }
+
+    li:nth-child(2), li:nth-child(3), li:nth-child(4){
+        display: none;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    li:first-child{
+        font-size: 3rem;
+    }
+
+    main{
+        padding: 2rem;
+    }
+
+    section:first-child{
+        position: relative;
+    }
+    
+    
+    /* Style En tête */
+    
+    h1{
+        color: #C55394;
+        text-align: center;
+        position: absolute;
+        top: 15rem;
+        left: 7rem;
+        margin-bottom: 2rem;
+    }
+
+    
+    /* Style Nos licornes */
+
+    figure{
+        position: relative;
+        display: inline-block;
+        margin-bottom: 1rem;
+        
+    }
+
+    figcaption{
+        
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #333;
+        color: white;
+        width: 100%;
+        opacity: .7;
+        padding: 1rem;
+        text-align: center;
+    }
+
+
+    /* Style Nous trouver */
+
+    iframe{
+        min-height: 30rem;
+        margin-bottom: 2rem;
+        border: none;
+    }
+
+    input:not([type="submit"]){
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    [type="submit"]{
+        color: white;
+        background:#C55394;
+        border: none;
+        padding: 1rem;
+        border-radius: 10%;
+
+
+    }
+/*
+Style footer
+*/
+
+    footer{
+        background:#C55394;
+        height: 4rem;
+        height: 100%;
+        width: 100%;
+    }
+
+    footer p{
+        display: inline-block;
+        color: white;
+        text-align: right;
+        font-size: 1rem;
+    }
+
+
+/* 
+Requête média
+Ecran d'une taille minimale de 950px
+*/
+
+    @media screen and (min-width:950px){
+        
+        
+        main{
+            padding: 4rem 4rem;
+            border: .1rem solid rgba(128, 128, 128, .7);
+            border-radius: 2rem;
+            box-shadow: -0.2rem 0rem 1.2rem 0.2rem rgba(86, 93, 101, 0.5);
+            margin: 2rem auto;
+            background: white;
+        }
+        
+
+        header{
+            text-align: right;
+            position: relative;
+            margin-bottom: 16rem;
+        }
+
+        h1{
+            font-size: 2rem;
+            position: absolute;
+            top: 15rem;
+            left: 92.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2{
+            display: block;
+        }
+
+        [alt="rainbow"]{
+            position: absolute;
+            top: 4rem;
+            left: 70rem;
+        }
+
+        li{
+            padding: 1rem;
+        }
+        
+        li:first-child{
+            display: inline-block;
+            position: absolute; 
+        }
+        
+        nav li:first-child{
+            left: 0;
+            margin: 0;
+            padding: auto 2rem;
+        }
+
+        li:nth-child(2), li:nth-child(3), li:nth-child(4){
+           display: inline-block;
+           text-align: right;
+        }
+
+        li:not(:first-child) a:hover {
+            padding:2rem;
+        }
+
+        li:not(:first-child) a{
+            text-transform: uppercase;
+        }
+        
+        figure{
+            display: inline-block;
+            width: 24%;
+            margin-right: .5rem;
+        }
+
+        iframe{
+            display:inline-block;
+            width: 49%
+        }
+
+        input:not([type="submit"]){
+            display: block;
+            width:50%
+        }
+
+        section:nth-child(3) article{
+            display: inline-block;
+            width:48%;
+            vertical-align: top;
+            margin: 1rem;
+        }
+
+
+
+
+
+
+
+    
+   
+
+
+
+
+
+
+
+

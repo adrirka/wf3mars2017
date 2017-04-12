@@ -1,0 +1,80 @@
+/* Attendre le chargement du DOM
+-je sélectionne mon document
+-je capte l'événement ready
+-je renvoie la fonction de callback
+*/
+
+
+    // Capter la soumission du formulaire
+   
+          
+        /* Bloquer le comportement naturel du formulaire (qui envoit la valeur)
+        -Je récupère mon événement evt dans ma fonction callback
+        -J'applique une fonction preventDefault() à l'événement
+        */
+        
+      
+        /*Connaitre la valeur saisie par l'utilisateur dans ll'input de type text, le textarea...
+        - je définie mes variables : nom de la variable = mon sélecteur + fonction val() => une variable par champs à récupérer (les étapes ci dessous sont à appliquer pour chacune des variables globales définies)
+		*/
+
+			/* Vérifier la taille de la valeur de la variable définie (condition IF...ELSE)
+			-j'applique un console log sur ma variable avec la fonction avec le .length	
+			-je définie une condition IF -le .length de ma variable- est strictement égale ( ==) ou < à X alors messages d'erreur pour le user  (voir ci-dessous). ELSE console.log( 'message ok' ) + INCREMENTATION du score de la variable
+			*/
+        
+				/* Message d'erreur si la condition n'est pas respectée
+				-édition du DOM grâce à la fonction .append() en ajoutant par exemple une balise <b></b> dans le label,  le plus simple étant de placer directement ces mêmes balises dans le HTLM
+				et en définissant le chemin pour mon sélecteur (soit l'attribut for du label soit mon input auquel j'applique un prev() pour remonter d'un cran à la balise qui précède et un  ..attr() pour sélectionner le "for" et un .childen() pour l'enfant 'b' )
+				-Une fois ma balise sélectionnée j'applique une Fonction .text( ' ' ) pour ajout du texte dans la balise sélectionnée ci dessus. la fonction .HTML permet d'ajouter du texte contenant du HTML et du style...
+				*/
+		
+				*/ Incrémentation de la variable si la condtion est vérifiée
+				- définir une variable pour le score au début de la fonction .submit() sur un index 0
+				-dans le ELSE de la condition (=condition vérifiée) définir sur ma variable score un opérateur d'affectation ++ pour signifier +1 (si 0 initialement alors la valeur passe à 1 et ainsi de suite...)
+				*/
+
+        /*Vérifier la valeur du score pour valider le formulaire (ici condition IF uniquement)
+			- si le score est égale a X (X étant le nombre de champs à éditer dans le formulaire) alors le formulaire est validé
+				console.log ('formulaire validé')
+		*/ 
+        
+         /*
+		 => Envoyer les donnée dans le fichier PHP et attendre la réponse du PHP (true/false)
+		 */
+		 			// Le PHP répond true !
+
+		----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			AVANT RESET DES CHAMPS DU FORMULAIRES ON PEUT AVOIR BESOIN DES DATAS POUR DES ETAPES FACULTATIVES
+		----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+         /* Ajouter le message dans la liste des commentaires en dessous du form
+		 -édition du DOM en .append() après création d'une balise parente ds le HTML (par exemple une <section></section> dédiée à liste de commentaire)
+          */ 
+
+      	/**/ Définir une modale, (par exemple sous forme d'#id) dans mon HTML avec un titre <h2> et un text <p> . Cette modale reprendrait le NOM de l'utilisateur et confirmerait la bonne soumission du formulaire.
+				>capter l'événement click sur le bouton "envoyer" du formulaire
+					>gérer l'affichage en .fadeIn()
+				>capter l'événement click sur la class fontaweome fa-times (=la croix) 
+					>gérer la transparence en .fadeOut()
+					
+		----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    
+         /*
+		 Vider les champs du formulaire
+          -Soit je .reset() mon form à partir de l'index [0] soit je vide mes .val( ' ' ) directement à partir de mon sélecteur 'input'
+		 */ 
+
+      
+       /* Supprimer les messages d'erreur 'champs obligatoires' / 'minimum X caractères' une fois que l'utilisateur corrige
+        -je sélection mon input et ou mon textarea
+        -Capter l'événement .focus sur ce sélecteur pour signifier que l'utilisateur est  à nouveau en train d'éditer le champs
+        -j'applique une fonction callback sur ce même sélecteur $( this ) pour vider les champs-soit éditer le contenu-  .text( ' ') sur la balise concernée par le message d'erreur (par exemple 'form b')
+        */ 
+        
+      
+       // fin de la soumission du formulaire 
+
+
+}); // fin de la fonction d'attente du chargement du DOM
