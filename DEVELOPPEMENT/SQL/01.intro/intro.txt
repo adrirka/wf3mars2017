@@ -1,0 +1,52 @@
+INTRODUCTION au SQL
+
+
+*********************************
+QUELQUES DEFINITIONS :
+
+Une base de données : il s'agit d'un emplacement de données sauvegardées. La BDD inclut des tables qui sont composées de champs (colonnes) et qui contiennent des enregistrements (lignes).
+
+SGBD -> Système de Gestion de Base de Données : c'est un logiciel qui sert d'interface entre utilisateurs et BDD permettant d'introduire des données, de les mettre à jour et d'y accéder.
+
+SQL -> Structured Query Language : il s'agit d'un langage de requêtes qui permet d'interroger une base de données.
+
+
+***********************************
+SGBDR et SGBD NoSQL :
+On distingue deux principaux SGBD, à savoir :
+    - les SGBDR pour Système de Gestion de Base de Données Relationnelles, par exemple MySQL
+    Il consiste à stocker l'information dans des tables définies par des colonnes, des clés primaires et des clés étrangères. Cela permet de ne pas stocker l'information plusieurs fois, mais que dans une seule table.
+
+    - Les NoSQL -> Not Only SQL : cela ressemble fortement à un grand tableau unidimensionnel avec des millions de données. Il n'y a plus de colonnes, on parle de base de données clé-valeur.
+
+
+    => exemple de SGBDR :
+        MySQL
+        Oracle
+        Microsoft SQL Server
+        PostgreSQL
+        ....
+
+    => exemples de SGBD NoSQL :
+        mongoDB
+        Redis
+        CouchDB
+        Cassandra
+    
+***********************************
+SITES DYNAMIQUES constitué de :
+
+-Front Office (partie visible par le user)
+-Back Office (partie dédiée à l'admin pour édition de la BDD)
+-une BDD qui contient l'ensemble des infos de la page 
+
+Le SQL restitue l'info entre la BDD et le Front Office 
+
+SITES STATIQUES = sites 'en dur' classiques
+
+
+Deux exemples d'utilisatuion des BDD et du SQL dans des sites DYNAMIQUES
+
+    => inscription / connexion d'un membre du site
+    => site e-commerce avec une page boutique et une page détaillée du produit
+
