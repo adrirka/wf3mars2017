@@ -202,7 +202,7 @@ DELETE FROM livre WHERE id_livre = 100; -- Le livre 'Une vie'
 
 -- On visualise les emprunts avec une jointure interne:
 
-SELECT emprunt.id_emprunt, livre.titre -- On peut aussi utiliser le nom de la table directement versus une initiale
+SELECT emprunt.id_emprunt, livre.titre -- On peut aussi utiliser le nom de la table directement versus une initiale. Dans ce cas pas d'alias à utiliser dans le FROM/INNER JOIN
 FROM emprunt
 INNER JOIN livre 
 ON emprunt.id_livre = livre.id_livre; 

@@ -1,0 +1,17 @@
+-- *********************************************
+-- Les contraintes d'intégrité
+-- *********************************************
+
+Sous PMA: 
+1° Créer la BDD et la remplir
+
+2° Lors de la création des tables, bien vérifier que le moteur est InnoDB, moteur qui permet de gérer les ForeignKey (FK pour clés étrangères) et les contraintes, contrairement au moteur MyISAM
+
+3° Déclarer un index sur les champs que l'on souhaite passer en clé étrangère (FK) : dans notre cas, le champs id_fourn de la table article. Pour cela cliquez sur INDEX du champs correspondant depuis l'onglet STRUCTURE. Une Cle ETRANGERE est représentée par une icone de clef en argent.
+
+4° Créér une contrainte entre la FK et PrimaryKey (PK) : cela se passe dans l'onglet STRUCTURE de la tabme article puis sur "Vue relationnelle"
+        => NO ACTION ou RESTRICT : on ne peut pas supprimer ou updater un fournisseur s'il est présent dans la table article. No action et Restrict font la même chose, sauf que No Action exécute d'abord un DELETE puis RECREE l'enregistrement (donc 2 actions), alors que RESTRIC ne fait rien du tout.
+
+        => CASCADE : la suppression d'un fournisseur de la table fournisseur supprime par effet de CASCADE les articles correspondants dans la table article
+
+        => SET NULL : la suppression ou la modification d'un fournisseur entraine NULL dans la table article à l'id_fourn concerné (les articles ne sont pas supprimés)
