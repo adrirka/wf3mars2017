@@ -1,0 +1,21 @@
+PHP :
+Personnal Home Page puis Hypertext Preprocessor 
+
+Langage de programmation de SCRIPT
+
+Open Source
+
+Situé côté serveur comme le SQL et contrairement aux langages HTML/CSS/JS
+
+Spécifiquement conçu pour développement de site web
+
+Le PHP permet de le développement de sites dynamique.
+Un site dynamique versus un site statique contient un front office / une BDD / un backoffice. Typiquement un  CMS 
+
+Architecture client / serveur 
+
+> l'ordinateur client envoie une requête HTTP au serveur web HTTP (type Apache).
+> Le serveur web traite la requête HTTP en PHP via un interpréteur PHP + SQL qui exécute les requêtes PHP/SQL et les transforme en HTML / CSS / JS avant de les renvoyer au site web côté client.
+
+
+
