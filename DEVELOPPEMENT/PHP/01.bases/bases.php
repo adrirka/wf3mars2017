@@ -37,8 +37,8 @@ echo '<br>'; // on peut mettre des balises HTML dans un echo, elles sont interpr
 
 print 'Nous sommes jeudi'; // print est une autre instruction d'affichage.'
 
-// Pour info, il existe d'autres instructions d'affichage (cf plus loin)
-// print_r();
+// Pour info, il existe d'autres instructions d'affichage pour la phase de DEVELOPPEMENT et non pas sur un site finalisé côté client en HTML contrairement à echo et print (cf plus loin)
+// print_r(); 
 // var_dump();
 
 
@@ -229,7 +229,7 @@ if (isset($var2)) echo 'var2 existe bien <br>';
 
 // empty sera utilisé pour vérifier, par exemple, que les champs d'un formulaire sont remplis. isset permettra par exemple de vérifier l'existence d'un indice dans un array avant de l'utiliser.
 
-        //----------
+        //----------En version PHP 5
 $var1 = isset($maVar) ? $maVar : 'valeur par défaut'; //dans cette ternaire, on affecte la valeur de $maVar à $varl si (représentée par le "?") elle existe. Celle-ci n'existant pas (sinon représentée par le ":"), on lui affecte 'valeur par défaut'
 echo $var1 . '<br>'; // affiche 'valeur par défaut'
 
@@ -347,7 +347,322 @@ echo $date->format('Y-m-d');
 // CEt objet bénéficie de méthodes (=fonctions) offertes par la classe; il y a entre autres, la méthode format() qui permet de modifier le format d'une date. Pour appeler cette méthode sur l'objet $date, on utilise la flèche "->"
 
 
-phpinfo();
+//--------------------------------------------------------------
+echo '<h2> Les fonctions utilisateurs </h2>';
+//--------------------------------------------------------------
 
+// Les fonctions qui ne pas prédéfinies dans le langage sont déclarées puis exécutées par l'utilisateur.
+
+// Déclaration d'une fonction
+function separation(){
+    echo '<hr>';
+}
+
+// Appel de la fonction par son nom: 
+separation(); // ici on exécute la fonction
+
+    //----------
+    // Fonction avec arguments : les arguments sont paramètres fournis à la fonction et lui permettent de compléter ou modifier son comportement initialement prévu 
+function bonjour($qui){
+    return 'Bonjour '. $qui . '<br>'; // return permet de renvoyer ce qui suit le return à l'endroit ou la fonction est appelée
+}
+
+    // Appel de la fonction avec un echo
+echo bonjour('Pierre'); // on appelle la fonction en lui donnant le string 'Pierre' en argument => Affiche 'Bonjour Pierre'
+
+$prenom = 'Etienne';
+echo bonjour ($prenom); // l'argument peut être une variable : affiche 'Bonjour Etienne'
+
+
+    //----------
+    // Exercice :
+function appliqueTva($nombre){
+    return $nombre *1.2;
+}
+
+// Ecrivez une fonction appliqueTva2 sur la base de la précédente, mais en donnant la possibilité de calculer un nombre avec le taux de notre choix.
+
+function appliqueTva2($nombre, $taux){ // on ne peut pas déclarer une fonction avec le même nom.
+    return $nombre * $taux;
+}
+
+echo 'Ma TVA est de ' . appliqueTva2(1.5, 2) . '<br>'; // lorsqu'une fonction attend des arguments, il faut obligatoirement les lui donner
+
+
+    //----------
+    // Exercice :
+function meteo($saison, $temperature){
+    echo "Nous sommes en $saison et il fait $temperature degre(s) <br>";
+}
+
+meteo('hiver', 2);
+meteo('printemps', 2);
+
+// CRéer une fonction meteo2 qui permet d'afficher "au printemps" quand il s'agit du printemps
+
+// Methode 1 : avec fonction if mais code non optimisé car répétition du echo
+function meteo2($saison, $temperature){
+    
+    if($saison == 'printemps'){
+        echo "Nous sommes au $saison et il fait $temperature degre(s) <br>";
+    }else{
+        echo "Nous sommes en $saison et il fait $temperature degre(s) <br>";
+    }
+}
+
+meteo2('printemps', 2);
+
+// Methode 2 : oavec fonction if - code optimisé par la création d'une autre $variable dédiée à l'article 
+function meteo2bis($saison, $temperature){
+    
+    if($saison == 'printemps'){
+        $article = 'au';
+    }else{
+        $article = 'en';
+        echo "Nous sommes $article $saison et il fait $temperature degre(s) <br>";
+    }
+}
+
+meteo2bis('printemps', 2);
+
+// Methode 3 : avec fonction ternaire (forme contractée de la condition if)
+function meteo3($saison, $temperature){
+    
+    $article = ($saison == 'printemps') ? 'au' : 'en'; //  : ? = if et : = else
+    echo "Nous sommes $article $saison et il fait $temperature degré(s) <br>";
+}
+    
+meteo3('printemps', 2);
+meteo3('hiver', 3);
+
+    //----------
+    // EXERCICE
+
+function prixLitre(){
+    return rand(1000,2000)/1000; // détermine un prix aléatoire entre 1 et 2€ :e le return() permet de sortir de la fonction
+}
+
+    // Ecrivez la fonction factureEssence() qui calcule le prix total de votre facture d'essence en fonction du nombre de litres que vous lui donnez. Cete fonction retourne la phrase "Votre facture est de X euros pour Y litres d'essences" (X et Y sont variables).
+    // Dans cette fonction, utilisez la fonction prixLitre() qui vous retourne le prix du litre d'essence
+
+function factureEssence($volumeY){
+    $totalFacture = $volumeY * prixLitre();
+    echo "Votre facture est $totalFacture euros pour $volumeY litres d'essences <br>";
+}
+
+factureEssence(50);
+
+
+
+//--------------------------------------------------------------
+echo '<h2> Les variables locales et globales </h2>';
+//--------------------------------------------------------------
+
+function jourSemaine(){
+    $jour = 'vendredi'; // ici ans la fonction nous sommes dans un espace LOCAL. La variable $jour est donc LOCALE
+    return $jour;
+}
+
+// a l'exterieur de la fonction je dans l'espace GLOBAL.
+
+// echo $jour; // je ne peux pas utiliser une variable locale dans l'espace global.
+echo jourSemaine() . '<br>'; // on peut cependant récupérer la valeur de $jour grâce au retunr qui est au sein de la fonctuion et à l'appel de cette fonction
+
+//----------
+$pays = 'France'; // variable global 
+function affichagePays(){
+    global $pays; // le mot clé global permet de récupérer une variable provenant de l'espace global au sein de l'espace local de la fonction 
+    echo $pays; // on peut donc utiliser cette variable $pays
+}
+
+affichagePays();
+
+
+//--------------------------------------------------------------
+echo '<h2> Les structure itératives : boucles </h2>';
+//--------------------------------------------------------------
+
+    // boucle while
+$i = 0; // valeur de départ de la boucle
+while ($i < 3){ // tant que $i est inférieur à 3, j'exécute les accolades qui suivent 
+    echo "$i---";
+    $i++; // on n'oublie pas d'incrémenter $i pour que la boucle ne soit pas infinie (il faut que la condition puisse devenir false à un moment donné)
+}
+echo '<br>';
+
+    // ----------
+    // EXERCICE : modifier la boucle while ci dessus en faisant en sorte que les "---" s'arrêtent après le 2
+$ii = 0; 
+while ($ii < 3){ 
+    if($ii == 2){
+         echo "$ii";
+    }else{
+         echo "$ii---";
+    }
+    $ii++; 
+}
+
+echo '<br>';
+
+    // ----------
+    // EXERCICE : à l'aide d'une boucle while, afficher dans un sélecteur les années depuis l'année en cours moins 100ans et jusqu'à l'année en cours : 1917 => 2017'
+
+// Methode 1 : ici la balise HTML <select> est inclus dans le PHP (nous aurions pu choisir de l'en exclure en fermant et en réouvrant le php -voir en méthode 2')
+
+echo '<select>';
+$annee = 2017;
+    while($annee >= 1917){
+        echo "<option>$annee</option>"; // RAPPEL mettre des guillemet pour évaluer la variable, sinon si on part sur de simples quotes, il faut concaténer
+        $annee--;
+    }
+echo '</select>';
+
+echo '<br>';
+
+// Methode 2 : code dynamique avec un paramètre défini PHP en l'occurence l'année Y. On notera ici que la balise <select> est en dehors du PHP.
 
 ?>
+
+<select>
+<?php
+$year = date('Y') - 100; // équivaut à 1917
+while($year <= date ('Y')){
+    echo "<option>$year</option>";
+    $year++;
+}
+echo '<br>';
+?>
+</select>
+
+<?php
+
+    // boucle do while
+// La boucle do while a la particularité de s'exécuter au moins UNE fois, puis tant que la condition de fin est vraie
+echo '<br>Boucle do while<br>';
+
+do{
+    echo 'un tour de boucle';
+}while (false); // on met la condition pour exécuter les tours de boucle ici  à la place de false. Dans ce cas précise, on voit que l'on effectue un tour de boucle bien que la condition soit fausse?
+
+// Noter la présence du ";" à la fin de la boucle do while (contrairement aux autres structures itératives).
+
+    // boucle for
+echo '<br>';
+for ($j = 0; $j < 16; $j++){ // dans la boucle for (initialisation de la valeur de départ; condition d'entreée dans la boucle; incrémentation (ou décrémentation))
+    print $j . '<br>';
+}
+
+
+    // ----------
+    // EXERCICE 
+
+    // 1. faire une boucle qui affiche 0 à 9 sur la même ligne 
+for ($l = 0; $l < 10; $l++){ 
+    print $l;
+}
+
+    // 2. faites la même chose mais dans un tableau HTML
+
+
+echo '<table border="1"><tr>'; 
+            for ($ll = 0; $ll < 10; $ll++){ 
+                print "<td>$ll</td>";
+            }
+echo '</tr></table>';
+
+    // 3. faites un tableau HTML de 10 colonnes sur 10 lignes à partir du code précédent  
+
+//methode boucle for 
+echo '<table border="1">';
+    for ($p = 0; $p <= 9; $p++){ // on crée une boucle for qui gère la répétition des dix lignes
+
+        echo '<tr>'; 
+            for ($pp = 0; $pp < 10; $pp++){  //on créé une boucle for qui gère la première ligne et les 10 colonnes
+                    print "<td>$pp</td>";
+            }   
+        echo '</tr>';
+    }
+echo '</table>';
+
+// methode boucle while
+echo '<hr>';
+
+echo '<table border="1">';
+    // on fait une boucle pour les lignes : 
+    $ibis = 0;
+    while($ibis < 10){
+        echo '<tr>';
+            //on fait une boucle for pour les colonnes
+            for($c = 0; $c <= 9; $c++){
+                print "<td>$c</td>";
+            }
+        $ibis++;
+        echo '</tr>';
+    }
+echo '</table>';
+
+
+
+//--------------------------------------------------------------
+echo '<h2> Les arrays ou tableaux </h2>';
+//--------------------------------------------------------------
+
+// On peut stocker dans un array une multitude de valeurs, quelque soit leur type.
+
+$liste = array('gregoire', 'nathalie', 'emilie', 'françois', 'georges'); // déclaration d'un array appelé $liste contenant des prénoms
+
+// echo $liste // erreur car on ne peut pas afficher directement le contenu d'un array'
+
+echo '<pre>'; var_dump($liste); echo '</pre>';// la balise <pre> met en forme succinctement 
+echo '<pre>'; print_r($liste); echo '</pre>';
+
+// Ces deux instructions d'affichage permettrent d'indiquer le type de l'élément mis en argument, ainsi que son contenu. Les balises <pre> servent à faire une mise en forme. Notez que ces deux instructions ne sont utilisées qu'en phase de développement'
+
+// Autre moyen d'affecter des valeurs dans un tableau
+$tab[] = 'France'; // permet d'ajouter la valeur 'France' dans le tableau $tab
+$tab[] = 'Italie'; 
+$tab[] = 'Espagne'; 
+$tab[] = 'Portugal';
+
+echo '<pre>'; print_r($tab); echo '</pre>'; // pour voir le contenu du tableau
+
+// Pour afficher la valeur ITalie qui se situe à l'indice 1!
+echo $tab[1] . '<br>'; // affiche Italie 
+
+    // ----------
+    // tableau associatif : tableau dont les indices sont littéraux : 
+$couleur = array ("j" => "jaune", "b" => "bleu", "v" => "vert"); // on peut choisir le nom des indices 
+
+// Pour accéder à un élément du tableau associatif :
+echo 'La seconde couleur de notre tableau est le '. $couleur['b'] . '<br>'; // affiche bleu
+echo "La seconde couleur de notre tableau est le $couleur[b] <br>"; // affiche bleu. Un array écrit entre guillemet perd ses quotes autours de son indice. On remarquera ici l'absence de concatenation car entre guilletmet les balises sont évaluées/interpretées.
+
+    // ----------
+    // Mesurer la taille d'un array : 
+echo 'taille du tableau : ' . count($couleur) . '<br>'; // compte le nombre d'éléments dans l'array $couleur, ici 3
+echo 'taille du tableau : ' . sizeof($couleur) . '<br>'; // compte le nombre d'éléments dans l'array $couleur, ici 3 (équivalent à la fonction count() ci dessus)
+
+    // ----------
+    // Transformer un array en string:
+$chaine = implode('-',  $couleur); // implode() rassemble les éléments d'un array en une chaine séparés par le séparateur '-' ici
+echo $chaine . '<br>';
+
+$couleur2 = explode('-', $chaine); // explode() transforme une chaine en array en séparant les éléments grâce au séparateur indiqué (ici un "-"). $couleur2 est un array aux indices numériques
+print_r($couleur2);
+
+    // ----------
+    // La boucle foreach est un moyen simple de passer en revue un tableau. 
+    // Elle fonctionne uniquement sur les arrays et les objets. Et elle a l'avantage d'être "automatique", s'arrêtant quand il n'y a plus d'éléments'
+echo '<pre>'; print_r($tab);
+
+foreach($tab as $valeur) { // la variable $valeur récupère à chaque tour de boucle les valeurs qui sont parcourues dans l'array $tab. ["parcourt l'array $tab par ses valeurs"]
+    echo $valeur . '<br>';
+}
+
+foreach($tab as $indice => $valeur) { // on parcourt l'array $tab par ses indices auxques on associe les valeurs
+    echo $indice . ' correspond à ' . $valeur . '<br>';
+
+}
+
+
+
