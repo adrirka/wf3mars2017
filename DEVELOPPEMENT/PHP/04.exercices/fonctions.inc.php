@@ -13,7 +13,7 @@ function calcul($fruit, $poids){
 
 $resultat = $poids * $prix_kg / 1000; //calcule le prix total selon un poids donné en gramme.
 
-return 'Les ' . $fruit .  'coutent ' . $resultat . 'euro pour ' . $poids . 'grammes';
+return 'Les ' . $fruit . ' coûtent ' . $resultat . ' euro pour ' . $poids . ' grammes';
 
 }
 

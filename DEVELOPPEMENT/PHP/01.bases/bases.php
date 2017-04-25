@@ -718,5 +718,51 @@ require_once('exemple.inc.php'); // avec le once, on vérifie d'abord si le fich
 // Le ".inc" du nom fichier est là à titre indicatif pour préciser qu'il s'agit d'un fichier inclus et non pas d'un fichier directement utilisé.
 
 
-//******************************************************************
+//--------------------------------------------------------------
+echo '<h2> Introduction aux objets </h2>';
+//--------------------------------------------------------------
 
+// Un objet est un autre type de données. Un objet est issu d'une classe qui possède des attributs (encore appelées propriétés) et des méthodes (équivalent de fonctions).
+// L'objet créé à partir d'une classe peut accéder à ces attributs et ces méthodes.$_COOKIE
+
+// Exemple avec uyn personnage de type 'Etudiant': 
+
+class Etudiant { // Par convention le nom de la classe prend toujours une MAJ
+    public $prenom = 'Julien'; // public pour préciser que l'élément est accessible partout, et donc en dehors de la classe.
+    public $age = 25; // $âge est un attribut ou propriété 
+    public function pays(){; // méthode appelée pays
+        return 'France';
+    }
+}
+
+$objet = new Etudiant();//new permet de créer un nouvel objet : on instancie la classe Etudiant en un objet appelé $objet. $objet est une instance de la classe Etudiant.
+
+echo '<pre>'; print_r($objet); echo '</pre>'; // on regarde le contenu de $objet : on voit son type, et la classe dont il est issu.
+
+// Afficher le prénom de l'étudiant $objet:
+echo $objet->prenom . '<br>'; // nous pouvons accéder à une propriété d'un objet en mettant une flèche '->'. Affiche "Julien"
+
+// Afficher le pays via la méthode pays();
+echo $objet->pays() . '<br>'; // on appelle la méthode pays() avec ses parenthèses : elle nous retourne 'France'
+
+
+// -------------
+// Contexte : sur un site, une classe Panier contiendra les propriétés et les méthodes nécessaires au fonctionnement du panier d'achat : 
+class Panier{
+    public function ajout_article($article){
+        //instruction qui ajoute le produit au panier
+        return "l'article $article a bien été ajoutée au panier <hr>";    
+    }
+}
+
+// Lorsqu'on clique sur le bouton "ajout au panier" : 
+$panier = new Panier(); // on crée un panier vide dans un premier temps
+echo $panier->ajout_article('Pull'); //puis on ajoute un pull au panier en appelant la méthode ajout_article();
+
+
+//petite contine pour se rappeler la bonne syntaxe à utiliser 
+//"avec un array j'utilise des crochet, avec un objet j'utilise des flèches..."
+
+
+
+//*****************************************************************************************

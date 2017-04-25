@@ -1,3 +1,5 @@
+<h1>Page détail articles :</h1>
+
 <?php
 // ********************************
 // La superglobale $_GET
@@ -9,9 +11,9 @@
 // Chaque indice de cette URL corrspond à un indice de l'array $_GET et chaque valeur aux arrays correspondants aux indices'
 
 
-// print_r($GET);
+// print_r($_GET);
 
-if(isset $_GET['article']) &&isset($_GET['couleur']) &&  isset($^_GET['prix'])){
+if(isset($_GET['article']) && isset($_GET['couleur']) && isset($_GET['prix'])){
     // si existent les indices articles, couleur et prix, on peut les afficher
 
 echo 'Article : ' . $_GET['article'] . '<br>';
