@@ -14,7 +14,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site', 'root', '', array(PDO::ATTR_E
 session_start();
 
 // chemin du site
-define('RACINE_SITE', '/Adrien%20Rousselet/DEVELOPPEMENT/TP-Site/'); // indique le dossier dans lequel se situe le site sans 'localhost'
+define('RACINE_SITE', '/Adrien Rousselet/DEVELOPPEMENT/TP-Site/'); // indique le dossier dans lequel se situe le site sans 'localhost'
 
 // Déclaration des variables d'affichages du site :
 $contenu = '';

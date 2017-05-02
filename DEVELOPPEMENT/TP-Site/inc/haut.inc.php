@@ -44,7 +44,7 @@
                         if(internauteEstConnecte()){
                             echo '<li><a href="' . RACINE_SITE . 'profil.php">Profil</a></li>';
                             echo '<li><a href="' . RACINE_SITE . 'connexion.php?action=deconnexion">Se déconnecter</a></li>';
-                        }else{ // sinon s'il n'st pas connecté
+                        }else{ // sinon s'il n'est pas connecté
                             echo '<li><a href="' . RACINE_SITE . 'inscription.php">Inscription</a></li>';
                             echo '<li><a href="' . RACINE_SITE . 'connexion.php">Connexion</a></li>';
                         }
