@@ -67,12 +67,13 @@ function creationDuPanier(){
 }
 
 function ajouterProduitDansPanier($titre, $id_produit, $quantite, $prix){ // ces arguments sont en provenance de panier.php
-
+    
     creationDuPanier(); // pour créer la structure si elle n'existe pas
 
-    $position_produit = array_search($id_produit, $_SESSION['panier']['id_produit']); // array_search retourne un chiffre si l'id_produit est présent dans l'array $_SESSION['panier'], qui correspond à l'indice auquel se situe l'élément (rappel : dans un array le premier indice vaut 0). Sinon retourne FALSE
-
+    $proposition_produit = array_search($id_produit, $_SESSION['panier']['id_produit']); // array_search retourne un chiffre si l'id_produit est présent dans l'array $_SESSION['panier'], qui correspond à l'indice auquel se situe l'élément (rappel : dans un array le premier indice vaut 0). Sinon retourne FALSE
+    
     if($proposition_produit === false){
+       
         // Si le produit n'est pas dans le panier on l'y ajoute : 
         $_SESSION['panier']['titre'][] = $titre; // les crochets vides pour ajouter l'élément à la fin de l'array (équivalent .push en js)
         $_SESSION['panier']['id_produit'][]= $id_produit; 
@@ -80,8 +81,58 @@ function ajouterProduitDansPanier($titre, $id_produit, $quantite, $prix){ // ces
         $_SESSION['panier']['prix'][] = $prix; 
     }else {
         // si le produit existe , on ajoute la quantite nouvelle à la quantité déjà présente dans le panier
-        $_SESSION['panier']['prix']
-
+        $_SESSION['panier']['quantite'][$proposition_produit] += $quantite;
+        
     }
 
 }
+
+
+// -----------------------------
+function montantTotal(){
+    $total = 0; // on obtient le total dans la console
+    
+    for($i = 0; $i < count($_SESSION['panier']['id_produit']);$i++){
+        // tant que $i est inférieur au nombre de produits présents dans le panier, on additionne le prix fois la quantité : 
+
+        $total += $_SESSION['panier']['quantite'][$i] * $_SESSION['panier']['prix'][$i]; // le symbole += pour ajouter la nouvelle valeur à l'ancienne sans l'écraser
+    }
+
+    return round($total, 2); // on retourne le total arrondi à 2 décimales
+
+}
+
+// -----------------------------
+function retirerProduitDuPanier($id_produit_a_supprimer){
+
+    // On cherche la position du produit dans le panier : 
+    $proposition_produit = array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']);// array_search renvoie la position du produit (INTeger) sinon false s'il n'y est pas.$_COOKIE
+
+    if($proposition_produit !== false){
+       
+       if($_SESSION['panier']['quantite'][$proposition_produit] > 1) {
+           $_SESSION['panier']['quantite'][$proposition_produit] -= 1;
+       }else{
+       
+        // si le produit est bien dans le panier, on coupe sa ligne :
+        array_splice($_SESSION['panier']['titre'], $proposition_produit, 1); // efface la portion du tableau à paertir de l'indice indiqué par $proposition_produit et sur 1 ligne
+
+        array_splice($_SESSION['panier']['quantite'], $proposition_produit, 1);
+        array_splice($_SESSION['panier']['prix'], $proposition_produit, 1);
+        array_splice($_SESSION['panier']['id_produit'], $proposition_produit, 1);
+
+       }
+    }
+}
+
+// -------------------------------
+// Exercice : créer une fonction qui retourne le nombre de produits différents dans le panier . Et afficher le résultat à côté du lien "panier" dans le menu de navigation, exemple : panier(3). So le panier est vide, vous affichez panier(0)
+
+function produitPanier(){
+    if(isset($_SESSION['panier'])){
+        return count($_SESSION['panier']['id_produit']);
+    }else{
+        return 0;
+    }
+}
+

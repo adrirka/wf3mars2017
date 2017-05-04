@@ -27,6 +27,43 @@ $contenu .= '</div>';
 
 
 
+//Exercice 
+
+/*  1- afficher le suivi des commandes du membre (s'il y'en a ) dans une liste <ul><li> : id_commande, date et état de la commande. S'il n'y en a pas, vous affichez "aucune commande en cours"
+
+    -------------------------------
+    4 grandes étapes
+    -requêtes BDD via le PDO
+    -requête préparée
+    -fetch
+    -echo
+    -------------------------------
+*/
+
+    //echo '<pre>'; print_r($_SESSION); echo '</pre>';
+
+    $suiviCommande = $pdo->prepare("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = :id_membre");
+ 
+    $suiviCommande->execute(array(':id_membre' => $_SESSION['membre']['id_membre']));
+    
+    
+    
+    $contenu .= '<ul>';
+    while($resultat =  $suiviCommande->fetch(PDO::FETCH_ASSOC)){
+       // echo '<pre>'; print_r($resultat); echo '</pre>';
+            $contenu .='<li>';
+                $contenu .=  $resultat['id_commande'];
+               $contenu .=  $resultat['date_enregistrement'];
+                $contenu .= $resultat['etat'];
+            $contenu .= '</li>';
+    }
+    $contenu .= '</ul>';
+    
+
+
+
+
+
 // ---------------------------- AFFICHAGE ----------------------------------
 require_once('inc/haut.inc.php');
 echo $contenu;
