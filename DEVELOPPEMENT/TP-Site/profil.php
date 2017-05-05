@@ -39,25 +39,50 @@ $contenu .= '</div>';
     -echo
     -------------------------------
 */
+    // Mon CODE : OK il fonctionne
 
-    //echo '<pre>'; print_r($_SESSION); echo '</pre>';
+    //echo '<pre>'; print_r($_SESSION); echo '</pre>'; Pour vérifier les champs à sélectionner dans la requête préparée depuis la SuperGlobale $_SESSION, array par définition. Soit id_commande, date_enregistrement et etat.
 
     $suiviCommande = $pdo->prepare("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = :id_membre");
- 
+    
     $suiviCommande->execute(array(':id_membre' => $_SESSION['membre']['id_membre']));
-    
-    
-    
-    $contenu .= '<ul>';
-    while($resultat =  $suiviCommande->fetch(PDO::FETCH_ASSOC)){
-       // echo '<pre>'; print_r($resultat); echo '</pre>';
-            $contenu .='<li>';
-                $contenu .=  $resultat['id_commande'];
-               $contenu .=  $resultat['date_enregistrement'];
-                $contenu .= $resultat['etat'];
-            $contenu .= '</li>';
+
+    if($suiviCommande->rowCount() > 0){
+
+        $contenu .= '<ul>';
+            while($resultat =  $suiviCommande->fetch(PDO::FETCH_ASSOC)){
+
+            //echo '<pre>'; print_r($resultat); echo '</pre>'; // ici mon objet PDO Statement $suiviCommande est bien transformé en array grâce au fetch
+
+                    $contenu .='<li>';
+                        $contenu .=  '<p>Votre numero de commande est le ' . $resultat['id_commande'] . '</p>';
+                        $contenu .=  '<p>La commande a été passée le ' . $resultat['date_enregistrement'] . '</p>';
+                        $contenu .= '<p>L\'etat de la commande est ' . $resultat['etat'] . '</p>';
+                    $contenu .= '</li>';
+            }
+        $contenu .= '</ul>';
+    }else{
+        $contenu .= "<p>Aucune commande en cours</p>";
     }
-    $contenu .= '</ul>';
+    
+    /*CORRECTION du prof = ALTERNATIVE
+
+    $id_membre = $_SESSION['membre']['id_membre'];
+
+    $resultat = executeRequete("SELECT id_commande, date_enregistrement, etat FROM commande WHERE id_membre = '$id_membre'"); // dans une requête SQL, on met les variables entre quotes. Pour mémoire si on y met un array, celui-ci perd ses quotes autours de l'indice. A savoir : on ne peut pas le faire avec un array multidimensionnel. 
+
+    //  S'il y a des commandes dans $resultats on les affiche, c'est donc une condition :
+    if($resultat->rowCount() > 0){ // $resultat est un objet donc on utilise pas de [] comme dans un array, de plus une méthode (ici rowCount) prend toujours des parentheses, sans paramètre
+        // on affiche les commandes
+        $contenu .= '<ul>'
+        while($commande = $resultat->fetch(PDO::FETCH_ASSOC)){
+            $contenu .= '<li>Votre commande n° ' . $commande['id_commande'] . ' du ' . $commande['date_enregistrement'] . 'est actuellement ' . $commande['etat'] . '</li>';
+        }else{
+            $contenu .= 'Aucune commande en cours';
+        }
+
+    }
+    */
     
 
 
