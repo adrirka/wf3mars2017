@@ -12,12 +12,7 @@
 	</div><!-- #main .wrapper -->
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
-			
-			<?php
-			//appel de ma fonction region bas
-			dynamic_sidebar('region-du-bas');
-			?>
-
+			<?php dynamic_sidebar('region-du-bas'); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

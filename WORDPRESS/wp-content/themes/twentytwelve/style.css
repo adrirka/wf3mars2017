@@ -202,6 +202,13 @@ article.format-status footer.entry-meta {
 	line-height: 2.181818182;
 }
 
+.menu-administratif ul li{
+	display: inline;
+	margin: 0 20px;
+
+}
+
+
 /* Form fields, general styles first */
 button,
 input,
@@ -1777,39 +1784,40 @@ img#wpstats {
 	}
 }
 
-.styleMenu li{
+.menuAdministratif li{
 	display: inline;
 	margin: 0 20px;
 }
 
-.modele-trois-colonne-colonne-gauche{
-	background: seagreen;
+.modele-trois-colonnes-colonne-gauche{
 	float: left;
 	max-width: 160px;
-	border-right: 1px solid, #c0c0c0;
-	padding: 20px;
+	border-right: 1px solid #c0c0c0;
+	padding: 100px;
 	min-height: 700px;
+	background-color: orange;
+	
 }
 
-.modele-trois-colonne-colonne-centrale{
-	background: yellow;
+.modele-trois-colonnes-colonne-centrale{
 	float: left;
-	max-width: 500px;
+	max-width: 300px;
 	padding: 20px;
 	min-height: 700px;
+
 }
 
-.modele-trois-colonne-colonne-droite{
-	background: red;
+.modele-trois-colonnes-colonne-droite{
 	float: left;
 	max-width: 500px;
-	border-left: 1px solid, #c0c0c0;
-	padding: 20px;
+	padding: 100px;
 	min-height: 700px;
+	border-left: 1px solid #c0c0c0;
+	background-color : purple
 }
 
 .clear{
-	clear:both;
+	clear: both;
 }
-	
 
+ 

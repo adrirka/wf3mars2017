@@ -1,0 +1,14 @@
+AJAX
+Asynchronous
+Javascript
+And
+XML => un peu lourd aujourd'hui. Les dev lui préfèrent le JSON car beaucoup plus léger en termes de données (d'ou l'acronyme AJAJ)
+
+JSON : 
+Javascript
+Object
+Notation
+
+PRINCIPE
+Changement / modification des données de la page sans rechargement de page.
+Execution d'un script en tâche de fond
