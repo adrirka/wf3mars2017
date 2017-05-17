@@ -61,7 +61,7 @@ if($mode == 'connexion'){
         $_SESSION['civilite'] = $civilite;
 
         $f = fopen('prenom.txt', 'a'); // on ouvre le fichier prenom.txt sinon on le créé)
-             fwrite($f, $pseudo . '\n'); // on écrit ds ce fichier le pseudo de l'utilisateur 
+             fwrite($f, $pseudo . "\n"); // on écrit ds ce fichier le pseudo de l'utilisateur 
              fclose($f); // pour fermer le fichier et libérer de la ressource
 
     }
