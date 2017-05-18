@@ -1,3 +1,8 @@
+-----------------------------------
+FORMATEUR : Mathieu Quittard
+mathieuquittard@evogue.fr
+-----------------------------------
+
 AJAX
 Asynchronous
 Javascript

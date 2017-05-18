@@ -15,13 +15,14 @@
             <div id="liste_membre_connecte"></div>
             <div class="clear"></div>
             <div id="smiley">
-                <img src="smil/smiley1.gif" alt=":)">
+                <img src="smil/smiley1.gif" alt="smiley1">
+                <img src="smil/smiley2.gif" alt="smiley2">
             </div>
 
             <!-- formulaire -->
             <div id="formulaire_tchat">
                 <form id="form">
-                    <textarea name="message" id="message" row="5" maxlength="300"></textarea>
+                    <textarea name="message" id="message" row="5" maxlength="300" value=""></textarea>
                     <input type="submit" name="envoi" value="envoi" class="submit">
                 </form> 
             </div>
@@ -30,8 +31,62 @@
 
         <script>    
             
+            // faire en sorte que si l'utilisateur appuie sur la touche "entrée" cela enregistre le messazge
+            // code de la touche "entrée" => 13
+                document.addEventListener( 'keypress', function(event){
+                    if( event.keyCode == 13 ){ // =>touche entrée
+                    
+                    event.preventDefault();
+                    var messageValeur = document.getElementById( 'message' ).value;
+                    ajax( 'postMessage', messageValeur );
+                    ajax( 'message_tchat' );
+                    document.getElementById( 'message' ).value = '';
+                    }
+
+                } );
+
+            // ajout de :smiley: dans le message lors du clic sur le smiley
+            document.getElementById("smiley").addEventListener("click", function(event) {
+                /*
+                document.getElementById("message").value = document.getElementById("message").value + event.target.alt;
+                document.getElementById("message").focus(); // focus permet de remettre le curseur
+                */
+
+                document.getElementById("message").value = document.getElementById("message").value + ' <img src="'+event.target.src+'" :> ';
+                document.getElementById("message").focus(); // focus permet de remettre le curseur
+
+                console.log(event);
+            });
+
             // pour récupérer la liste des membres connectés
             setInterval("ajax(liste_membre_connecte)", 11000);
+
+            //Enregistrement du message via le bouton submit
+            document.getElementById( 'form' ).addEventListener( 'submit', function(e){
+                e.preventDefault(); // on bloque le rechargement de la page lors de la soumission 
+           
+
+            // pour récuper l'information du message 
+            // ajax( 'postMessage', message.value );
+            var messageValeur = document.getElementById( 'message' ).value;
+
+            // on envoi notre ajax
+            ajax( 'postMessage', messageValeur );
+
+            ajax( 'message_tchat' );
+
+            // on vide le champs
+            document.getElementById( 'message' ).value = '';
+            } );
+
+
+            // FERMETURE DE LA PAGE PAR L'UTILISATEUR
+            // on le retire du fichier prenom.txt
+
+            window.onbeforeunload = function(){
+                ajax('liste_membre_connecte', '<?php echo $_SESSION['pseudo']; ?>');
+            }
+
 
             // déclaration de la fonction ajax
             function ajax(mode, arg = ''){
